@@ -375,19 +375,5 @@ let phone = "+7(903)-123-45-67";
 let quote =
   "It was the best of times, it was the worst of times, it was the age of wisdom, it was the age of foolishness, it was the epoch of belief, it was the epoch of incredulity, it was the season of Light, it was the season of Darkness, it was the spring of hope, it was the winter of despair";
 
-let regexp = /snow/g;  //NB: If 'snow' occurs > 1 in any given day,
-let result = [];
-
-let daily = wxObj.daily;
-
-for (let i = 0; i < wxObj.daily.length; ++i) {
-  result.unshift( wxObj.daily[i].weather[0].description.match(regexp));
-}
-var opStr = "";
-for(let i =0; i < result.length; ++i){
-    opStr += `Day ${i+1} has ${result[i]?result[i]:"no snow"} <br/>`;
-}
-
-
 
 op.innerHTML = opStr;
